@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Commentaireforums list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Texte</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commentaireForum in commentaireForums %}
+            <tr>
+                <td><a href="{{ path('commentaireforum_show', { 'id': commentaireForum.id }) }}">{{ commentaireForum.id }}</a></td>
+                <td>{{ commentaireForum.texte }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('commentaireforum_show', { 'id': commentaireForum.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('commentaireforum_edit', { 'id': commentaireForum.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('commentaireforum_new') }}">Create a new commentaireForum</a>
+        </li>
+    </ul>
+{% endblock %}

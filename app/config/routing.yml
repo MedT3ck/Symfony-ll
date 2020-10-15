@@ -1,0 +1,19 @@
+ticket:
+    resource: "@TicketBundle/Resources/config/routing.yml"
+    prefix:   /
+
+forum_commentaire_forum:
+    resource: "@ForumBundle/Controller/CommentaireForumController.php"
+    type:     annotation
+
+forum:
+    resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix: /forum
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+    # app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+

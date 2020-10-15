@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Commentaireforum</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ commentaireForum.id }}</td>
+            </tr>
+            <tr>
+                <th>Texte</th>
+                <td>{{ commentaireForum.texte }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('commentaireforum_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('commentaireforum_edit', { 'id': commentaireForum.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
